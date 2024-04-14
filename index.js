@@ -15,8 +15,10 @@ async function randomFacts() {
    .then((data) => {
     let facts = document.querySelector('.factContent');
     facts.innerHTML = data.text;
-
-})
+}).catch((err) => {
+    err = "Error fetching facts"
+    alert(err);
+});
 }
 document.getElementById('prevent').addEventListener('click',(e) => {
 e.preventDefault();
